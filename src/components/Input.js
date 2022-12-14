@@ -8,16 +8,16 @@ const Input = ({ input, setInput, item, setItem }) => {
   };
 
   //按鈕送出功能
-  const clickHandler = (e) => {
-    if (e.target.value !== "") {
+  const clickHandler = () => {
+    if (input !== "") {
       setItem([...item, { content: input, id: v4(), isDone: false }]);
       setInput("");
     }
   };
   //按下Enter送出功能
-  const handleKeyDown = (event) => {
-    if (event.target.value !== "") {
-      if (event.key === "Enter") {
+  const handleKeyDown = (e) => {
+    if (input !== "") {
+      if (e.key === "Enter") {
         setItem([...item, { content: input, id: v4(), isDone: false }]);
         setInput("");
       }
